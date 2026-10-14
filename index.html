@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#070912">
+<title>ANIME STICK HERO</title>
+<link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+<div id="stage">
+  <canvas id="cv"></canvas>
+  <div id="scanlines"></div>
+
+  <!-- ===================== HUD ===================== -->
+  <div id="hud" class="hidden">
+    <div id="hudTop">
+      <div id="hudPortrait"><canvas id="portraitCv" width="76" height="76"></canvas></div>
+      <div id="hudBars">
+        <div class="barrow"><span class="blab hp">HP</span><div class="bar hp"><i id="hpFill"></i></div><span class="bval" id="hpTxt">100</span></div>
+        <div class="barrow"><span class="blab en">EN</span><div class="bar en"><i id="enFill"></i></div><span class="bval" id="enTxt">100</span></div>
+        <div class="barrow"><span class="blab ut">ULT</span><div class="bar ut"><i id="ultFill"></i></div><span class="bval" id="ultTxt">0%</span></div>
+      </div>
+      <div id="hudRight">
+        <div class="pill coin">COIN <b id="coinTxt">0</b></div>
+        <div class="pill" id="lvlPill">W1-1</div>
+        <div class="pill" id="scorePill">SCORE <b id="scoreTxt">0</b></div>
+        <div class="pill timer hidden" id="timerPill">00:00</div>
+      </div>
+    </div>
+
+    <div id="xpWrap"><div id="xpFill"></div><span id="xpTxt">LV 1</span></div>
+
+    <div id="combo" class="hidden"><b id="comboNum">0</b><em>HITS</em></div>
+
+    <div id="bossWrap" class="hidden">
+      <div id="bossName">BOSS</div>
+      <div class="bar boss"><i id="bossFill"></i></div>
+      <div id="bossPhase"></div>
+    </div>
+
+    <div id="objective"></div>
+
+    <div id="skillBar">
+      <div class="slot" id="slotSkill1"><b>SKILL</b><s class="key">L</s><i class="cdmask"></i><u class="enot"></u></div>
+      <div class="slot" id="slotSkill2"><b>SK2</b><s class="key">H</s><i class="cdmask"></i><u class="enot"></u></div>
+      <div class="slot" id="slotDash"><b>DASH</b><s class="key">SPC</s><i class="cdmask"></i><u class="enot"></u></div>
+      <div class="slot ult" id="slotUlt"><b>ULT</b><s class="key">U</s><i class="cdmask"></i><u class="enot"></u></div>
+    </div>
+
+    <div id="toast"></div>
+    <div id="popupLayer"></div>
+
+    <div id="reviveBox" class="hidden">
+      <div class="panel small">
+        <h3>YOU WERE DEFEATED</h3>
+        <p id="reviveInfo">Revive for 150 coins?</p>
+        <div class="btnrow">
+          <button class="btn primary" id="btnRevive">REVIVE</button>
+          <button class="btn ghost" id="btnGiveUp">GIVE UP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SCREENS ===================== -->
+  <div id="screens"></div>
+
+  <!-- ===================== TOUCH ===================== -->
+  <div id="touch" class="hidden">
+    <div class="tleft">
+      <button class="tbtn dir" data-act="left">◀</button>
+      <button class="tbtn dir" data-act="right">▶</button>
+    </div>
+    <div class="tright">
+      <button class="tbtn sm" data-act="skill2">SK2</button>
+      <button class="tbtn sm" data-act="skill1">SKILL</button>
+      <button class="tbtn sm" data-act="heavy">HEAVY</button>
+      <button class="tbtn sm" data-act="dash">DASH</button>
+      <button class="tbtn big jump" data-act="jump">JUMP</button>
+      <button class="tbtn big atk" data-act="light">ATK</button>
+      <button class="tbtn ultbtn" data-act="ultimate">ULT</button>
+    </div>
+  </div>
+
+  <div id="flash"></div>
+
+  <div id="cine" class="hidden">
+    <div class="cbar top"></div>
+    <div class="cbar bot"></div>
+    <div id="cineText">
+      <div id="cineHero">BLAZE</div>
+      <div id="cineMove">METEOR BURST</div>
+      <div id="cineTag">— ANIME POWER MODE —</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/core.js?v=2"></script>
+<script src="js/audio.js?v=2"></script>
+<script src="js/data.js?v=2"></script>
+<script src="js/level.js?v=2"></script>
+<script src="js/render.js?v=2"></script>
+<script src="js/entities.js?v=2"></script>
+<script src="js/player.js?v=2"></script>
+<script src="js/enemies.js?v=2"></script>
+<script src="js/bosses.js?v=2"></script>
+<script src="js/ui.js?v=2"></script>
+<script src="js/menus.js?v=2"></script>
+<script src="js/screens.js?v=2"></script>
+<script src="js/abilities.js?v=2"></script>
+<script src="js/game.js?v=2"></script>
+</body>
+</html>
